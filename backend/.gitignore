@@ -3,7 +3,23 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+# Backend
+backend/target/
+*.class
 
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.iml
 ### STS ###
 .apt_generated
 .classpath
