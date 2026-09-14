@@ -1,0 +1,240 @@
+.admin-page {
+    min-height: 100vh;
+    padding: 100px 7%;
+    background: #f5f7fb;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.admin-header {
+    margin-bottom: 50px;
+}
+
+.admin-header h1 {
+    font-size: 52px;
+    margin: 12px 0;
+    color: #111827;
+}
+
+.admin-header p {
+    color: #64748b;
+    font-size: 18px;
+}
+
+
+/* FORM */
+
+.admin-form-card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 24px;
+    padding: 40px;
+    margin-bottom: 70px;
+    box-shadow: 0 15px 40px rgba(20, 30, 50, 0.05);
+}
+
+.form-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form-heading h2 {
+    margin-top: 10px;
+    font-size: 28px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #172033;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 14px 16px;
+    border: 1px solid #d7dee9;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2867e8;
+}
+
+.admin-submit-btn {
+    margin-top: 30px;
+    background: #101b18;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: white;
+    border: 1px solid #d7dee9;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+
+/* JOB LIST */
+
+.admin-list-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.admin-list-heading h2 {
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+.admin-list-heading > span {
+    color: #64748b;
+}
+
+.admin-job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.admin-job-card {
+    background: white;
+    border: 1px solid #dfe5ee;
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-job-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.admin-job-info h3 {
+    margin: 7px 0;
+    font-size: 20px;
+}
+
+.admin-job-info p {
+    margin: 0;
+    color: #64748b;
+}
+
+.job-type {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #2867e8;
+    font-weight: 700;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    padding: 10px 17px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.edit-btn {
+    background: white;
+    border: 1px solid #d7dee9;
+}
+
+.delete-btn {
+    background: white;
+    border: 1px solid #efb5b5;
+    color: #c24141;
+}
+
+
+@media (max-width: 800px) {
+
+    .admin-page {
+        padding: 60px 20px;
+    }
+
+    .admin-header h1 {
+        font-size: 38px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .admin-job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+}
+.return-home-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 20px;
+    border: 1px solid #d7dee9;
+    border-radius: 10px;
+    background: white;
+    color: #172033;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.return-home-btn:hover {
+    background: #f1f5f9;
+    transform: translateY(-1px);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
