@@ -1481,3 +1481,26 @@ footer p {
     border-radius: 20px;
   }
 }
+@media (max-width: 600px) {
+  .job-card {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .job-info {
+    gap: 6px;
+  }
+
+  .job-card h3 {
+    margin: 4px 0;
+  }
+
+  .job-card .tags {
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+
+  .job-card .apply-btn {
+    margin-top: 4px;
+  }
+}
