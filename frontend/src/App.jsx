@@ -152,7 +152,7 @@ function Home() {
           <div className="hero-content">
 
             <div className="hero-badge">
-              ✦ Your career, your opportunity
+              ✦ Your job search, simplified
             </div>
 
 
@@ -164,8 +164,8 @@ function Home() {
 
 
             <p>
-              Discover opportunities, apply with confidence,
-              and keep every application organized in one place.
+              Discover relevant opportunities, apply with confidence,
+              and never lose track of an application again.
             </p>
 
 

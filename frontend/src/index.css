@@ -64,8 +64,8 @@ a {
 }
 
 .logo-image {
-  width: 58px;
-  height: 58px;
+  width: 40px;
+  height: 40px;
 
   object-fit: cover;
 
@@ -549,16 +549,25 @@ footer p {
 @media (max-width: 800px) {
 
   .navbar {
-    width: calc(100% - 30px);
-  }
+      width: 100%;
+      padding: 20px 17px;
+    }
 
   .nav-links {
     display: none;
   }
 
   .menu-btn {
-    display: block;
-  }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+
+      background: transparent;
+      font-size: 30px;
+    }
 
   .hero {
     width: calc(100% - 30px);
@@ -1064,7 +1073,7 @@ footer p {
     position: absolute;
     top: 82px;
     left: 20px;
-    right: 20px;
+    right: 10px;
 
     display: flex;
     flex-direction: column;
