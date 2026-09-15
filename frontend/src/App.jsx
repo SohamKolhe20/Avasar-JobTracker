@@ -118,28 +118,68 @@ function Home() {
       </nav>
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#jobs" onClick={() => setMenuOpen(false)}>
-            Jobs
-          </a>
 
-          <a href="#about" onClick={() => setMenuOpen(false)}>
+          <Link
+            to="/jobs"
+            onClick={() => setMenuOpen(false)}
+          >
+            Jobs
+          </Link>
+
+          <a
+            href="#about"
+            onClick={() => setMenuOpen(false)}
+          >
             About
           </a>
 
-          <Link
-            to="/login"
-            onClick={() => setMenuOpen(false)}
-          >
-            Login
-          </Link>
+          {!isLoggedIn ? (
+            <>
+              <Link
+                to="/login"
+                onClick={() => setMenuOpen(false)}
+              >
+                Login
+              </Link>
 
-          <Link
-            to="/login"
-            className="mobile-menu-button"
-            onClick={() => setMenuOpen(false)}
-          >
-            Get Started
-          </Link>
+              <Link
+                to="/register"
+                className="mobile-menu-button"
+                onClick={() => setMenuOpen(false)}
+              >
+                Get Started
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/dashboard"
+                onClick={() => setMenuOpen(false)}
+              >
+                Dashboard
+              </Link>
+
+              {isAdmin && (
+                <Link
+                  to="/admin"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Admin
+                </Link>
+              )}
+
+              <button
+                className="mobile-menu-button"
+                onClick={() => {
+                  logout();
+                  setMenuOpen(false);
+                }}
+              >
+                Logout
+              </button>
+            </>
+          )}
+
         </div>
       )}
 
