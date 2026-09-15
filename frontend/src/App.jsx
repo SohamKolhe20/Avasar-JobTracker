@@ -332,14 +332,13 @@ function Home() {
           <div className="about-card">
 
             <span className="section-label">
-              WHY avasar?
+              WHY AVASAR?
             </span>
 
 
             <h2>
               One place for your
-              <span>
-                entire job journey.
+              <span>entire job journey.
               </span>
             </h2>
 
@@ -354,9 +353,7 @@ function Home() {
 
               <div>
 
-                <div className="feature-icon">
-                  ⌕
-                </div>
+
 
                 <h3>
                   Discover
@@ -370,11 +367,6 @@ function Home() {
 
 
               <div>
-
-                <div className="feature-icon">
-                  ↗
-                </div>
-
                 <h3>
                   Apply
                 </h3>
@@ -387,10 +379,6 @@ function Home() {
 
 
               <div>
-
-                <div className="feature-icon">
-                  ✓
-                </div>
 
                 <h3>
                   Track
