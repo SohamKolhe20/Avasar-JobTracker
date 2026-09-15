@@ -287,7 +287,7 @@ const handleApply = async (job) => {
 
                             <button
                                 className="job-apply-btn"
-                                onClick={() => handleApply(job)}
+                                onClick={() => navigate(`/jobs/${job.id}`)}
                             >
                                 Apply →
                             </button>

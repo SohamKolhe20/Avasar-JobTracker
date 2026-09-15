@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "./index.css";
 import api from "./services/api";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, useNavigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Jobs from "./pages/Jobs";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
-
+import JobDetails from "./pages/JobDetails";
 function Home() {
   const [jobs, setJobs] = useState([]);
   const [loadingJobs, setLoadingJobs] = useState(true);
@@ -344,6 +344,7 @@ function Home() {
 
                   <JobCard
                     key={job.id}
+                    id={job.id}
                     title={job.title}
                     company={job.company}
                     location={job.location}
@@ -456,6 +457,7 @@ function Home() {
 /* ================= JOB CARD ================= */
 
 function JobCard({
+  id,
   title,
   company,
   location,
@@ -470,18 +472,10 @@ function JobCard({
     : [];
 
 
-  const handleApply = () => {
+  const navigate = useNavigate();
 
-    if (!jobUrl) {
-      return;
-    }
-
-    window.open(
-      jobUrl,
-      "_blank",
-      "noopener,noreferrer"
-    );
-
+  const handleViewJob = () => {
+    navigate(`/jobs/${id}`);
   };
 
 
@@ -533,9 +527,9 @@ function JobCard({
 
       <button
         className="apply-btn"
-        onClick={handleApply}
+        onClick={handleViewJob}
       >
-        Apply →
+        View Job
       </button>
 
     </article>
@@ -558,6 +552,7 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/jobs/:id" element={<JobDetails />} />
 
         {/* User dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
