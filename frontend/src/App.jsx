@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import Jobs from "./pages/Jobs";
+import Register from "./pages/Register";
 import Admin from "./pages/Admin";
 
 function Home() {
@@ -176,11 +177,8 @@ function Home() {
               </Link>
 
 
-              <Link
-                to="/login"
-                className="secondary-btn"
-              >
-                Create Account
+              <Link to="/register" className="get-started-btn">
+                Get Started
               </Link>
 
             </div>
@@ -519,6 +517,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/register" element={<Register />} />
 
         {/* User dashboard */}
         <Route path="/dashboard" element={<Dashboard />} />
