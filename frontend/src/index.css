@@ -74,22 +74,7 @@ a {
   display: block;
   flex-shrink: 0;
 }
-.orb-inner img {
- width: 220px;
-   height: 220px;
 
-   border-radius: 50%;
-   overflow: hidden;
-
-   background: #111827;
-
-   display: grid;
-   place-items: center;
-
-   box-shadow:
-     inset 0 0 0 10px rgba(255, 255, 255, 0.06),
-     0 15px 35px rgba(0, 0, 0, 0.18);
-}
 .nav-links {
   display: flex;
   align-items: center;
@@ -209,8 +194,8 @@ a {
 }
 
 .main-orb {
-  width: 330px;
-  height: 330px;
+  width: clamp(200px, 28vw, 330px);
+  aspect-ratio: 1 / 1;
 
   border-radius: 50%;
 
@@ -222,11 +207,13 @@ a {
 
   display: grid;
   place-items: center;
+
+  flex-shrink: 0;
 }
 
 .orb-inner {
-  width: 220px;
-  height: 220px;
+  width: 66.67%;
+  aspect-ratio: 1 / 1;
 
   border-radius: 50%;
 
@@ -236,12 +223,21 @@ a {
   display: grid;
   place-items: center;
 
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 100px;
-  font-weight: 700;
+  overflow: hidden;
 
   box-shadow:
     inset 0 0 0 12px rgba(255,255,255,0.05);
+}
+
+.orb-inner img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  display: block;
 }
 
 .floating-card {
@@ -590,18 +586,21 @@ footer p {
   }
 
   .hero-visual {
+    width: 100%;
     height: 380px;
+
+    display: grid;
+    place-items: center;
+
+    overflow: visible;
   }
 
   .main-orb {
-    width: 260px;
-    height: 260px;
+    width: min(260px, 68vw);
   }
 
   .orb-inner {
-    width: 175px;
-    height: 175px;
-    font-size: 75px;
+    width: 66.67%;
   }
 
   .card-one {
@@ -690,14 +689,11 @@ footer p {
   }
 
   .main-orb {
-    width: 220px;
-    height: 220px;
+    width: min(220px, 65vw);
   }
 
   .orb-inner {
-    width: 145px;
-    height: 145px;
-    font-size: 60px;
+    width: 66.67%;
   }
 
   .floating-card {
