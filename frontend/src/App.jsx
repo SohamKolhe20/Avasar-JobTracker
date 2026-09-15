@@ -337,7 +337,7 @@ function Home() {
 
 
             <h2>
-              One place for your
+              One place for your {" "}
               <span>entire job journey.
               </span>
             </h2>
@@ -351,44 +351,32 @@ function Home() {
 
             <div className="features">
 
-              <div>
-
-
-
-                <h3>
-                  Discover
-                </h3>
-
-                <p>
-                  Find relevant job opportunities.
-                </p>
-
+              <div
+                className="feature-card"
+                onClick={() => {
+                  document.getElementById("jobs")?.scrollIntoView({
+                    behavior: "smooth"
+                  });
+                }}
+                role="button"
+                tabIndex={0}
+              >
+                <div className="feature-icon">🔎</div>
+                <h3>Discover</h3>
+                <p>Find relevant job opportunities.</p>
               </div>
 
-
-              <div>
-                <h3>
-                  Apply
-                </h3>
-
-                <p>
-                  Apply directly through company links.
-                </p>
-
+              <div className="feature-card">
+                <div className="feature-icon">🚀</div>
+                <h3>Apply</h3>
+                <p>Apply directly through company links.</p>
               </div>
 
-
-              <div>
-
-                <h3>
-                  Track
-                </h3>
-
-                <p>
-                  Keep your applications organized.
-                </p>
-
-              </div>
+              <Link to="/dashboard" className="feature-card">
+                <div className="feature-icon">📋</div>
+                <h3>Track</h3>
+                <p>Keep your applications organized.</p>
+              </Link>
 
             </div>
 
