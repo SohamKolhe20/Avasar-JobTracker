@@ -1507,3 +1507,27 @@ footer p {
     margin-bottom: 0 !important;
   }
 }
+.get-started-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 23px;
+
+  border-radius: 13px;
+
+  background: transparent;
+  color: #111827;
+
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.get-started-btn:hover {
+  color: #2563eb;
+}
+@media (max-width: 450px) {
+  .get-started-btn {
+    width: 100%;
+  }
+}
