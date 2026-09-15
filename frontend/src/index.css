@@ -761,20 +761,31 @@ footer p {
 
 /* Logo */
 
-.auth-logo {
+.auth-brand {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
 
+    width: fit-content;
+
     text-decoration: none;
-    color: #111827;
+    color: #17201d;
 
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
+}
+
+.auth-brand-logo {
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 50%;
 }
 
 .auth-logo img {

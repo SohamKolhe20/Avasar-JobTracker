@@ -60,12 +60,13 @@ function Login() {
             <div className="auth-container">
 
                 {/* Logo */}
-                <Link to="/" className="auth-logo">
+                <Link to="/" className="auth-brand">
                     <img
                         src="/avasarLogo.png"
                         alt="Avasar"
+                        className="auth-brand-logo"
                     />
-                    <span>AVASAR</span>
+                    <span>avasar</span>
                 </Link>
 
                 {/* Card */}
