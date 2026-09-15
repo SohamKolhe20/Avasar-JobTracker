@@ -44,7 +44,12 @@ function Register() {
       <div className="auth-card">
 
         <div className="auth-brand">
-          <div className="auth-logo">a</div>
+          <div className="auth-logo">
+              <img
+                  src="/avasarLogo.png"
+                  alt="avasar"
+                  className="logo-image"
+               /></div>
           <span>avasar</span>
         </div>
 
