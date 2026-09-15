@@ -1128,14 +1128,24 @@ footer p {
   }
 
   .mobile-menu-button {
-    margin-top: 10px;
+    width: 100%;
+    min-height: 52px;
+    padding: 14px 20px;
 
-    text-align: center;
+    border-radius: 14px;
+    border: none;
 
-    background: #111a18;
-    color: white !important;
+    background: #111a17;
+    color: white;
 
-    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
   }
 }
 /* =========================
