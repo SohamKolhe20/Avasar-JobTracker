@@ -28,12 +28,11 @@ function Register() {
 
     try {
       await api.post("/auth/register", form);
-
       navigate("/login");
     } catch (err) {
       setError(
         err.response?.data?.message ||
-          "Registration failed. Please try again."
+        "Registration failed. Please try again."
       );
     } finally {
       setLoading(false);
@@ -43,49 +42,82 @@ function Register() {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <h1>Create your account</h1>
-        <p>Start tracking your job applications with Avasar.</p>
 
-        {error && <div className="auth-error">{error}</div>}
+        <div className="auth-brand">
+          <div className="auth-logo">a</div>
+          <span>avasar</span>
+        </div>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Full name"
-            value={form.name}
-            onChange={handleChange}
-            required
-          />
+        <div className="auth-heading">
+          <h1>Create your account</h1>
+          <p>
+            Start tracking your job applications with Avasar.
+          </p>
+        </div>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            value={form.email}
-            onChange={handleChange}
-            required
-          />
+        {error && (
+          <div className="auth-error">
+            {error}
+          </div>
+        )}
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={handleChange}
-            minLength={6}
-            required
-          />
+        <form className="auth-form" onSubmit={handleSubmit}>
 
-          <button type="submit" disabled={loading}>
-            {loading ? "Creating account..." : "Create Account"}
+          <div className="form-group">
+            <label>Full name</label>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Email address</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="At least 6 characters"
+              value={form.password}
+              onChange={handleChange}
+              minLength={6}
+              required
+            />
+          </div>
+
+          <button
+            className="auth-submit"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Creating account..." : "Create Account →"}
           </button>
+
         </form>
 
-        <p className="auth-footer">
-          Already have an account?{" "}
-          <Link to="/login">Login</Link>
-        </p>
+        <div className="auth-divider">
+          <span>Already have an account?</span>
+        </div>
+
+        <Link to="/login" className="auth-login-link">
+          Login to Avasar
+        </Link>
+
       </div>
     </div>
   );
