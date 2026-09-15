@@ -1,5 +1,5 @@
 package com.avasar.jobtracker.config;
-
+import org.springframework.http.HttpMethod;
 import com.avasar.jobtracker.security.ForbiddenHandler;
 import com.avasar.jobtracker.security.JwtAuthenticationFilter;
 import com.avasar.jobtracker.security.UnauthorizedHandler;
@@ -49,9 +49,16 @@ public class SecurityConfig {
 
         http
                 .csrf(csrf -> csrf.disable())
-                .cors(cors -> {})
+
+                .cors(cors -> cors.configurationSource(corsConfigurationSource))
+
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+
+                        .requestMatchers(
+                                HttpMethod.OPTIONS,
+                                "/**"
+                        ).permitAll()
+
                         .requestMatchers(
                                 "/api/health",
                                 "/api/auth/**"
@@ -76,10 +83,11 @@ public class SecurityConfig {
                                 HttpMethod.DELETE,
                                 "/api/jobs/**"
                         ).hasRole("ADMIN")
+
                         .requestMatchers(
                                 HttpMethod.PUT,
                                 "/api/applications/*/status"
-                        ).authenticated()
+                        ).hasRole("ADMIN")
 
                         .anyRequest().authenticated()
                 )

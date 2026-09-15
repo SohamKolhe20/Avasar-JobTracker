@@ -1,6 +1,5 @@
 package com.avsar.jobtracker.config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -12,20 +11,17 @@ import java.util.List;
 @Configuration
 public class CorsConfig {
 
-    @Value("${frontend.url:https://avasar-job-tracker.vercel.app}")
-    private String frontendUrl;
-
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(
+        configuration.setAllowedOriginPatterns(
                 List.of(
-                        "http://localhost:5173",
-                        "http://localhost:5174",
                         "https://avasar-job-tracker.vercel.app",
-                        frontendUrl
+                        "https://*.vercel.app",
+                        "http://localhost:5173",
+                        "http://localhost:5174"
                 )
         );
 
@@ -45,10 +41,15 @@ public class CorsConfig {
 
         configuration.setAllowCredentials(true);
 
+        configuration.setMaxAge(3600L);
+
         UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
 
-        source.registerCorsConfiguration("/**", configuration);
+        source.registerCorsConfiguration(
+                "/**",
+                configuration
+        );
 
         return source;
     }
