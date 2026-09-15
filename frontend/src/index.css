@@ -1483,14 +1483,17 @@ footer p {
 }
 @media (max-width: 600px) {
   .job-card {
-    padding: 18px 16px;
+    height: auto !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .job-card .job-info {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .job-card .apply-btn {
-    margin-top: 0;
-  }
-
-  .job-info {
-    margin-bottom: 0;
+    margin-top: 14px !important;
   }
 }
