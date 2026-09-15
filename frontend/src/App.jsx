@@ -55,11 +55,11 @@ function Home() {
         <Link to="/" className="logo">
           <img
             src="/avasarLogo.png"
-            alt="Avasar"
+            alt="avasar"
             className="logo-image"
           />
 
-          <span>AVASAR</span>
+          <span>avasar</span>
         </Link>
 
 
@@ -201,7 +201,7 @@ function Home() {
 
                 <img
                   src="/avasarLogo.png"
-                  alt="Avasar logo"
+                  alt="avasar logo"
                 />
 
               </div>
@@ -237,19 +237,20 @@ function Home() {
         <section className="stats">
 
           <div>
-            <strong>100+</strong>
+            <strong>{jobs.length}</strong>
             <span>Opportunities</span>
           </div>
 
           <div>
-            <strong>50+</strong>
+            <strong>
+              {new Set(jobs.map((job) => job.company)).size}
+            </strong>
             <span>Companies</span>
           </div>
-
           <div>
-            <strong>24/7</strong>
-            <span>Application Tracking</span>
-          </div>
+              <strong>24/7</strong>
+              <span>Application Tracking</span>
+            </div>
 
         </section>
 
@@ -331,7 +332,7 @@ function Home() {
           <div className="about-card">
 
             <span className="section-label">
-              WHY AVASAR?
+              WHY avasar?
             </span>
 
 
@@ -418,11 +419,11 @@ function Home() {
 
           <img
             src="/avasarLogo.png"
-            alt="Avasar"
+            alt="avasar"
             className="logo-image"
           />
 
-          AVASAR
+          avasar
 
         </div>
 
@@ -472,10 +473,6 @@ function JobCard({
 
   return (
     <article className="job-card">
-
-      <div className="company-logo">
-        {company?.charAt(0)}
-      </div>
 
 
       <div className="job-info">

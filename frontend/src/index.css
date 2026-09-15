@@ -371,7 +371,7 @@ a {
 }
 
 .job-card {
-  min-height: 320px;
+
 
   padding: 25px;
 
@@ -408,33 +408,25 @@ a {
 }
 
 .job-info {
-  margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .job-type {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  color: #82908b;
-  font-weight: 700;
+    margin-bottom: 12px;
 }
 
-.job-card h3 {
-  font-family: "Space Grotesk";
-  font-size: 21px;
-  margin-top: 7px;
+.job-info h3 {
+    margin: 0 0 8px;
 }
 
 .company {
-  margin-top: 7px;
-  color: #697873;
-  font-size: 13px;
+    margin: 0 0 20px;
 }
 
 .tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 18px;
+    margin-bottom: 20px;
 }
 
 .tags span {
