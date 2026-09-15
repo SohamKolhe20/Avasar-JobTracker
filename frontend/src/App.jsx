@@ -444,7 +444,7 @@ function Home() {
 
 
         <p>
-          Build your next opportunity.
+          Find your next opportunity.
         </p>
 
       </footer>

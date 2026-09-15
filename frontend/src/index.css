@@ -410,7 +410,6 @@ a {
 .job-info {
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .job-type {
@@ -438,7 +437,7 @@ a {
 }
 
 .apply-btn {
-  margin-top: auto;
+  margin-top: 12px;
   width: 100%;
   padding: 12px;
 
@@ -662,7 +661,7 @@ footer p {
   }
 
   .job-card {
-    min-height: 285px;
+    min-height: 0;
   }
 
   .about-card {
@@ -1482,18 +1481,29 @@ footer p {
   }
 }
 @media (max-width: 600px) {
+
   .job-card {
-    height: auto !important;
     min-height: 0 !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
     justify-content: flex-start !important;
+    padding: 20px 16px !important;
   }
 
   .job-card .job-info {
+    flex: none !important;
+    height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .job-card .apply-btn {
-    margin-top: 14px !important;
+    margin-top: 12px !important;
+    width: 100%;
+  }
+
+  .job-card .tags {
+    margin-bottom: 0 !important;
   }
 }
