@@ -16,7 +16,7 @@ function Home() {
 
   const isLoggedIn = !!token;
   const isAdmin = user?.role === "ADMIN";
-
+  const [menuOpen, setMenuOpen] = useState(false);
   const latestJob = jobs.length > 0 ? jobs[0] : null;
 
 
@@ -106,11 +106,41 @@ function Home() {
         </div>
 
 
-        <button className="menu-btn">
-          ☰
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? "✕" : "☰"}
         </button>
 
       </nav>
+      {menuOpen && (
+        <div className="mobile-menu">
+          <a href="#jobs" onClick={() => setMenuOpen(false)}>
+            Jobs
+          </a>
+
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
+
+          <Link
+            to="/login"
+            onClick={() => setMenuOpen(false)}
+          >
+            Login
+          </Link>
+
+          <Link
+            to="/login"
+            className="mobile-menu-button"
+            onClick={() => setMenuOpen(false)}
+          >
+            Get Started
+          </Link>
+        </div>
+      )}
 
 
       {/* ================= HERO ================= */}
