@@ -1131,20 +1131,21 @@ footer p {
     min-height: 52px;
     padding: 14px 20px;
 
-    border-radius: 14px;
-    border: none;
-
-    background: #111a17;
-    color: white;
-
-    font-size: 16px;
-    font-weight: 600;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    background: #111a17;
+    color: #ffffff !important;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-sizing: border-box;
   }
 }
 /* =========================
