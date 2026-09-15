@@ -1516,15 +1516,21 @@ footer p {
 
   border-radius: 13px;
 
-  background: transparent;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #d6dfdc;
+
   color: #111827;
 
   font-weight: 600;
   text-decoration: none;
+
+  transition: 0.2s ease;
 }
 
 .get-started-btn:hover {
-  color: #2563eb;
+  background: white;
+  border-color: #bfcac6;
+  transform: translateY(-1px);
 }
 @media (max-width: 450px) {
   .get-started-btn {
