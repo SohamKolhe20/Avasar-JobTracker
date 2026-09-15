@@ -3,7 +3,6 @@ import org.springframework.http.HttpMethod;
 import com.avasar.jobtracker.security.ForbiddenHandler;
 import com.avasar.jobtracker.security.JwtAuthenticationFilter;
 import com.avasar.jobtracker.security.UnauthorizedHandler;
-import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -21,18 +20,18 @@ public class SecurityConfig {
     private final UnauthorizedHandler unauthorizedHandler;
     private final ForbiddenHandler forbiddenHandler;
 
-    private final CorsConfigurationSource corsConfigurationSource;
+
 
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthenticationFilter,
             UnauthorizedHandler unauthorizedHandler,
-            ForbiddenHandler forbiddenHandler,
-            CorsConfigurationSource corsConfigurationSource
+            ForbiddenHandler forbiddenHandler
+
     ) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.unauthorizedHandler = unauthorizedHandler;
         this.forbiddenHandler = forbiddenHandler;
-        this.corsConfigurationSource = corsConfigurationSource;
+
     }
 
     @Bean
@@ -48,7 +47,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
 
-                .cors(cors -> cors.configurationSource(corsConfigurationSource))
+                .cors(cors -> {})
 
                 .authorizeHttpRequests(auth -> auth
 
