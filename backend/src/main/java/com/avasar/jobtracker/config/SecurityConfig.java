@@ -1,15 +1,17 @@
 package com.avasar.jobtracker.config;
-import org.springframework.http.HttpMethod;
+
 import com.avasar.jobtracker.security.ForbiddenHandler;
 import com.avasar.jobtracker.security.JwtAuthenticationFilter;
 import com.avasar.jobtracker.security.UnauthorizedHandler;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -20,18 +22,14 @@ public class SecurityConfig {
     private final UnauthorizedHandler unauthorizedHandler;
     private final ForbiddenHandler forbiddenHandler;
 
-
-
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthenticationFilter,
             UnauthorizedHandler unauthorizedHandler,
             ForbiddenHandler forbiddenHandler
-
     ) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.unauthorizedHandler = unauthorizedHandler;
         this.forbiddenHandler = forbiddenHandler;
-
     }
 
     @Bean
@@ -47,7 +45,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())
 
-                .cors(cors -> cors.disable())
+                .cors(Customizer.withDefaults())
 
                 .authorizeHttpRequests(auth -> auth
 
@@ -90,19 +88,15 @@ public class SecurityConfig {
                 )
 
                 .exceptionHandling(exception -> exception
-                        .authenticationEntryPoint(
-                                unauthorizedHandler
-                        )
-                        .accessDeniedHandler(
-                                forbiddenHandler
-                        )
+                        .authenticationEntryPoint(unauthorizedHandler)
+                        .accessDeniedHandler(forbiddenHandler)
                 )
 
                 .formLogin(form -> form.disable())
 
                 .addFilterBefore(
                         jwtAuthenticationFilter,
-                        org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class
+                        UsernamePasswordAuthenticationFilter.class
                 );
 
         return http.build();
